@@ -30,7 +30,7 @@
 }
 
 body {
-font-family: 'Quicksand', sans-serif;  
+font-family: 'Quicksand', sans-serif;
 margin:0;
 }
 
@@ -41,7 +41,7 @@ h4,
 h5,
 h6 {
   /* font-family: 'Roboto Mono', monospace; */
-  font-family: 'Quicksand', sans-serif;  
+  font-family: 'Quicksand', sans-serif;
   font-weight: bold;
 }
 
@@ -67,7 +67,7 @@ h2 {
   font-family: 'Quicksand', sans-serif;
   font-weight: bold;
   font-size: 24px;
-  margin-bottom: 40px;  
+  margin-bottom: 40px;
 }
 
 .hero {
@@ -114,7 +114,7 @@ h2 {
   /* margin-right: ;
     margin-left: ;
     margin-top: ;
-  */  
+  */
   padding: 20px;
   background: whitesmoke !important;
   display: flex;
@@ -208,12 +208,12 @@ figure {
 .flexbox {
   display: flex;
   /* height: 200px; */
-  
-  /*flex-direction: column;*/ 
-  
-  /*flex-wrap: nowrap;*/ 
+
+  /*flex-direction: column;*/
+
+  /*flex-wrap: nowrap;*/
   flex-wrap: wrap;
-/*   
+/*
   justify-content: space-evenly; is used to justify content in x axe
   align-items: center;           is used to justify content in y axe
   border: 1px solid blue;  */
@@ -292,8 +292,8 @@ figure {
 }
 
 .contact {
-  background-color: #6e8ca1;
-  color: white;
+  background-color: #f4fbff;
+  /* color: white; */
   height: 180px;
   display: flex;
   align-items: center;
@@ -325,6 +325,10 @@ figure {
   background-image: url('../images/Github.svg');
 }
 
+.social-link.linkedin {
+  background-image: url('../images/linkedin.png');
+}
+
 .social-link.instagram {
   background-image: url('../images/Instagram.svg');
 }
@@ -342,13 +346,15 @@ figure {
 }
 
 .form-email button {
-  display: block;
+  /* display: block; */
   background: transparent;
-  color: white;
+  /* color: white; */
   padding: 10px 0;
   border-radius: 5px;
   width: 100px;
   margin-top: 10px;
+  align-items: center;
+  justify-content: center;
 }
 
 .form-email h3 {
@@ -379,6 +385,17 @@ font-family: 'Quicksand', sans-serif;}
   top: 5px;
   color: white;
 }
+
+.anchor {
+  position: fixed;
+  /* justify-content: right; */
+  align-items: right;
+  bottom: 0;
+  right: 0;
+  /* left: 500px; */
+  /* top: 500px; */
+}
+
 
 @media screen and (max-width: 1023px) {
   .event-list-title {
@@ -495,7 +512,7 @@ font-family: 'Quicksand', sans-serif;}
     width: auto;
     /* font-size: 10px; */
   }
-  .project-course, .project-date, .project-url { 
+  .project-course, .project-date, .project-url {
     margin: .3em 0;
   }
   .project-title {
@@ -577,4 +594,3 @@ font-family: 'Quicksand', sans-serif;}
     padding: 2em 1em;
   }
 }
-
