@@ -16,15 +16,18 @@
 
   <body class="font-mono bg-lime-50 dark:bg-gray-800">
 
-    <header class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"> 
-      <nav class="flex px-3 text-sm font-medium rounded-full text-sky-950 dark:text-sky-200 justify-center items-center"> 
-        <a class="relative block px-2 py-2 transition hover:text-amber-600 dark:hover:text-yellow-400" href="#experience"> Experience </a>
-        <a class="relative block px-2 py-2 transition hover:text-amber-600 dark:hover:text-yellow-400" href="#projects"> Projects </a>
-        <a class="relative block px-2 py-2 transition hover:text-amber-600 dark:hover:text-yellow-400" href="#background"> Backgrounds </a>
-        <a class="relative block px-2 py-2 transition hover:text-amber-600 dark:hover:text-yellow-400" href="#aboutme"> About me </a>
-        <a class="relative block px-2 py-2 transition hover:text-amber-600 dark:hover:text-yellow-400" href="mailto:davidmatamoros90@gmail.com"> Contact </a>
-      </nav> 
-    </header>
+    <header class="fixed top-0 z-10 w-full mx-auto mt-2">
+      <div class="flex justify-center">
+        <div class="bg-lime-200 border-b-2 border-gray-300 rounded-full">
+          <nav class="flex px-3 text-sm sm:text-base font-medium text-sky-950 dark:text-sky-200 justify-center items-center">
+            <a class="relative block px-1 sm:px-2 py-1 sm:py-2 transition hover:text-amber-600 dark:hover:text-yellow-400" href="#experience"> Experience </a>
+            <a class="relative block px-1 sm:px-2 py-1 sm:py-2 transition hover:text-amber-600 dark:hover:text-yellow-400" href="#projects"> Projects </a>
+            <a class="relative block px-1 sm:px-2 py-1 sm:py-2 transition hover:text-amber-600 dark:hover:text-yellow-400" href="#backgrounds"> Backgrounds </a>
+            <a class="relative block px-1 sm:px-2 py-1 sm:py-2 transition hover:text-amber-600 dark:hover:text-yellow-400" href="#about_me"> About me </a>
+          </nav>
+        </div>
+      </div>
+    </header>    
 
     <main class="px-4">
 
@@ -65,7 +68,7 @@
           </div>
       </section>
 
-      <section id="experience" class="py-24 section undefined scroll-m-20 w-full mx-auto my-auto container lg:max-w-4xl md:max-w-2xl">
+      <section id="experience" class="section py-24 md:py-36 scroll-m-20 w-full mx-auto my-auto container lg:max-w-4xl md:max-w-2xl">
         <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-sky-950 dark:text-white"> <svg class="size-8" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z"></path><path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2"></path><path d="M12 12l0 .01"></path><path d="M3 13a20 20 0 0 0 18 0"></path></svg>
           Experience
         </h2>
@@ -413,7 +416,7 @@
         </div>
       </section>
         
-      <section class="section py-16 md:py-36 scroll-m-20 w-full mx-auto container lg:max-w-4xl md:max-w-2xl">
+      <section id="about_me" class="section py-16 md:py-36 scroll-m-20 w-full mx-auto container lg:max-w-4xl md:max-w-2xl">
         <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-sky-950 dark:text-white"> <svg class="size-8" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path><path d="M6 21v-2a4 4 0 0 1 4 -4h4"></path><path d="M15 19l2 2l4 -4"></path></svg>
           About me
         </h2>
@@ -445,12 +448,62 @@
         <p class="p-4">© 2024 <a href="https://github.com/matamorosd" class="hover:text-amber-600" target="_blank">@matamorosd</a>. Almost all Rights Reserved.</p>
         <!-- Right Section of Footer -->
         <div>
-          <a href="#aboutme" class="mr-4 hover:text-amber-600">About Me</a>
+          <a href="#about_me" class="mr-4 hover:text-amber-600">About Me</a>
           <a href="mailto:davidmatamoros90@gmail.com" class="hover:text-amber-600">Contact</a>
         </div>
       </div>
     </footer>
     
+
+    <script>
+      window.addEventListener('scroll', function() {
+        var experience = document.getElementById('experience');
+        var projects = document.getElementById('projects');
+        var backgrounds = document.getElementById('backgrounds');
+        var aboutMe = document.getElementById('about_me');
+    
+        var scrollPosition = window.scrollY;
+    
+        // Check if the scroll position is within the range of each section
+        if (experience.offsetTop <= scrollPosition && scrollPosition < projects.offsetTop) {
+          // Apply styles for the Experience section
+          setActive('experience');
+        } else {
+          removeActive('experience');
+        }
+    
+        if (projects.offsetTop <= scrollPosition && scrollPosition < backgrounds.offsetTop) {
+          // Apply styles for the Projects section
+          setActive('projects');
+        } else {
+          removeActive('projects');
+        }
+    
+        if (backgrounds.offsetTop <= scrollPosition && scrollPosition < aboutMe.offsetTop) {
+          // Apply styles for the Backgrounds section
+          setActive('backgrounds');
+        } else {
+          removeActive('backgrounds');
+        }
+    
+        if (aboutMe.offsetTop <= scrollPosition) {
+          // Apply styles for the About Me section
+          setActive('about_me');
+        } else {
+          removeActive('about_me');
+        }
+      });
+    
+      function setActive(id) {
+        document.querySelector('a[href="#' + id + '"]').classList.add('active');
+        document.querySelector('a[href="#' + id + '"]').classList.add('text-amber-600');
+      }
+    
+      function removeActive(id) {
+        document.querySelector('a[href="#' + id + '"]').classList.remove('active');
+        document.querySelector('a[href="#' + id + '"]').classList.remove('text-amber-600');
+      }
+    </script>
 
     <!-- <script>
       // console.log('Hola mundo! es mi primera linea en JS');
